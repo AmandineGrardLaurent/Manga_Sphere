@@ -15,6 +15,7 @@
 }
 
 .titleH2 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "paytone-one";
   color: var(--color-yellow);
   font-size: 3em;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
+import banner from "../../assets/images/banner_bleach.jpg";
 import SerieCard from "../../components/seriecard/SerieCard";
 import style from "./homepage.module.css";
-import banner from "../../assets/images/banner_bleach.jpg";
 
 export default function HomePage() {
   const [series, setSeries] = useState<SerieType[]>([]);
