@@ -1,43 +1,43 @@
 import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
-class UserRepository {
-  async create(user: NewUserType) {
+class SerieRepository {
+  async create(serie: NewSerieType) {
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO user(lastname, firstname, email, password) VALUES (?, ?, ?, ?)",
-      [user.lastname, user.firstname, user.email, user.password],
+      "INSERT INTO serie (title, synopsis, author, picture) VALUES (?,?,?,?)",
+      [serie.title, serie.synopsis, serie.author, serie.picture],
     );
     return [result];
   }
 
   async read(id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      "SELECT * FROM user WHERE id = ?",
+      "SELECT * FROM serie WHERE id = ?",
       [id],
     );
     return rows[0];
   }
 
   async readAll() {
-    const [rows] = await databaseClient.query<Rows>("SELECT * FROM user");
+    const [rows] = await databaseClient.query<Rows>("SELECT * FROM serie");
     return rows;
   }
 
-  async update(user: UserType) {
+  async update(serie: SerieType) {
     const [result] = await databaseClient.query<Result>(
-      "UPDATE user SET firstname = ?, lastname = ?, email = ?, password = ? WHERE id = ?",
-      [user.firstname, user.lastname, user.email, user.password, user.id],
+      "UPDATE serie SET title = ?, synopsis = ?, author = ?, picture = ? WHERE id = ?",
+      [serie.title, serie.synopsis, serie.author, serie.picture, serie.id],
     );
     return result.affectedRows;
   }
 
   async delete(id: number) {
     const [result] = await databaseClient.query<Result>(
-      "DELETE FROM user WHERE id = ?",
+      "DELETE FROM serie WHERE id = ?",
       [id],
     );
     return result.affectedRows;
   }
 }
 
-export default new UserRepository();
+export default new SerieRepository();
