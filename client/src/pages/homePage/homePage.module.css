@@ -1,0 +1,25 @@
+* {
+  background-color: #0d0d0d;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+}
+
+.titleH2 {
+  font-family: "paytone-one";
+  color: var(--color-yellow);
+  font-size: 3em;
+}
+
+.banner {
+  width: 100%;
+}
