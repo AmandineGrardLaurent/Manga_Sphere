@@ -51,7 +51,6 @@ CREATE TABLE IF NOT EXISTS volume (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   title VARCHAR(200) NOT NULL,
   number INT,
-  picture VARCHAR(250) NOT NULL,
   serie_id INT NOT NULL,
   FOREIGN KEY (serie_id) REFERENCES serie(id),
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -73,7 +72,6 @@ CREATE TABLE IF NOT EXISTS season (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   title VARCHAR(200) NOT NULL,
   number INT,
-  picture VARCHAR(250) NOT NULL,
   year INT,
   serie_id INT NOT NULL,
   FOREIGN KEY (serie_id) REFERENCES serie(id),
@@ -99,3 +97,4 @@ CREATE TABLE IF NOT EXISTS serie_category (
 );
 
 INSERT INTO role(id, label) VALUES (1, "admin"), (2, "user_waiting"), (4, "user_rejected"), (3, "user");
+
