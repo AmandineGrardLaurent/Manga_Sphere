@@ -64,4 +64,19 @@ const destroy: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, edit, add, destroy };
+// vérification de l'existence ou non de l'email dans la BDD
+const verifyEmailExists: RequestHandler = async (req, res, next) => {
+  try {
+    const user = await userRepository.findUserByEmail(req.body.email);
+
+    if (user.length !== 0) {
+      res.sendStatus(422);
+      return;
+    }
+    next();
+  } catch (e) {
+    next(e);
+  }
+};
+
+export default { browse, read, edit, add, destroy, verifyEmailExists };

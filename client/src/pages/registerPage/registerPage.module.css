@@ -1,0 +1,15 @@
+.logo {
+  color: var(--color-yellow);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  font-size: 3em;
+  margin: 0.6em;
+}
+
+.container {
+  background-color: #0d0d0d;
+}
+
+.banner {
+  opacity: 0.5;
+}
