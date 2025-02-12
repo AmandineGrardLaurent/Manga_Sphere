@@ -1,7 +1,7 @@
 import express from "express";
-import userActions from "../modules/user/userActions";
 import { hashPassword } from "../middlewares/argon2.middleware";
 import { validateDataFormUser } from "../middlewares/joi.middleware";
+import userActions from "../modules/user/userActions";
 
 const router = express.Router();
 

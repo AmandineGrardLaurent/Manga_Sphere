@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
-import style from "./register.module.css";
 import { toast } from "react-toastify";
+import style from "./register.module.css";
 
 export default function Register() {
   const minPassword: number = 8;
