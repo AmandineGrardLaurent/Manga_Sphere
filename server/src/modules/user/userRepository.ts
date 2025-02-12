@@ -38,6 +38,15 @@ class UserRepository {
     );
     return result.affectedRows;
   }
+
+  // vérification de l'existence de l'email dans la BDD
+  async findUserByEmail(userEmail: string) {
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM user WHERE email= ?",
+      [userEmail],
+    );
+    return rows as UserType[];
+  }
 }
 
 export default new UserRepository();

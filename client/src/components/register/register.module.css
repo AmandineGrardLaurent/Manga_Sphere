@@ -1,0 +1,9 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: rgb(255, 236, 61);
+  padding: 2em;
+  width: 50%;
+  border-radius: 1em;
+}

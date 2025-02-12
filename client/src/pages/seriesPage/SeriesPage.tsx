@@ -26,7 +26,7 @@ export default function SeriesPage() {
             className={style.banner}
           />
         </header>
-        <main>
+        <main className={style.main}>
           <h2 className={style.titleH2}>Découvre ton manga</h2>
           <section>
             <article className={style.card}>

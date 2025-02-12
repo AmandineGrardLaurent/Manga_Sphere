@@ -1,11 +1,19 @@
 import express from "express";
+import { hashPassword } from "../middlewares/argon2.middleware";
+import { validateDataFormUser } from "../middlewares/joi.middleware";
 import userActions from "../modules/user/userActions";
 
 const router = express.Router();
 
 router.get("/api/user", userActions.browse);
 router.get("/api/user/:id", userActions.read);
-router.post("/api/user", userActions.add);
+router.post(
+  "/api/user",
+  validateDataFormUser,
+  hashPassword,
+  userActions.verifyEmailExists,
+  userActions.add,
+);
 router.put("/api/user/:id", userActions.edit);
 router.delete("/api/user/:id", userActions.destroy);
 
