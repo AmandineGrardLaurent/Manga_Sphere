@@ -67,7 +67,7 @@ const destroy: RequestHandler = async (req, res, next) => {
 // vérification de l'existence ou non de l'email dans la BDD
 const verifyEmailExists: RequestHandler = async (req, res, next) => {
   try {
-    const user = await userRepository.findUserByEmail(req.body.email);
+    const user = await userRepository.readByEmail(req.body.email);
 
     if (user.length !== 0) {
       res.sendStatus(422);

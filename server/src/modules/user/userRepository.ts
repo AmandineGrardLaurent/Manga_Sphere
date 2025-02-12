@@ -4,7 +4,7 @@ import type { Result, Rows } from "../../../database/client";
 class UserRepository {
   async create(user: NewUserType) {
     const [result] = await databaseClient.query<Result>(
-      "INSERT INTO user(lastname, firstname, email, password) VALUES (?, ?, ?, ?)",
+      "INSERT INTO user(lastname, firstname, email, password, role_id) VALUES (?, ?, ?, ?, 2)",
       [user.lastname, user.firstname, user.email, user.password],
     );
     return [result];
@@ -40,7 +40,7 @@ class UserRepository {
   }
 
   // vérification de l'existence de l'email dans la BDD
-  async findUserByEmail(userEmail: string) {
+  async readByEmail(userEmail: string) {
     const [rows] = await databaseClient.query<Rows>(
       "SELECT * FROM user WHERE email= ?",
       [userEmail],

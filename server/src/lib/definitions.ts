@@ -64,3 +64,9 @@ type VolumeType = {
   number: number;
   serie_id: number;
 };
+
+// payload
+
+type PayloadType = {
+  email: string;
+};
