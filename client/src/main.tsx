@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import RegisterPage from "./pages/registerPage/RegisterPage";
+import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
 import SeriesPage from "./pages/seriesPage/SeriesPage";
 
 // Import additional components for new routes
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/series/details/:id",
+        element: <SerieDetailsPage />,
       },
     ],
   },

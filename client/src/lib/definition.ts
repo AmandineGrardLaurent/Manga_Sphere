@@ -17,3 +17,29 @@ type SerieType = {
   author: string;
   picture: string;
 };
+
+type SerieDetailsType = {
+  title: string;
+  synopsis: string;
+  author: string;
+  picture: string;
+};
+
+// season
+
+type SeasonType = {
+  id: number;
+  title: string;
+  number: number;
+  year: number;
+  serie_id: number;
+};
+
+// volume
+
+type VolumeType = {
+  id: number;
+  title: string;
+  number: number;
+  serie_id: number;
+};
