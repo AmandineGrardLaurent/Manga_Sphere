@@ -2,8 +2,23 @@
   background-color: #0d0d0d;
   color: white;
   padding: 5em 10em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .banner {
   width: 100%;
+}
+
+.commentary {
+  border: 2px solid var(--color-blue);
+  padding: 3em;
+  border-radius: 2em;
+}
+
+.books {
+  border: 2px solid var(--color-blue);
+  padding: 3em;
+  border-radius: 2em;
 }

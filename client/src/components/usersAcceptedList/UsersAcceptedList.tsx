@@ -12,6 +12,7 @@ export default function UsersAcceptedList({ user }: { user: UserType }) {
         method: "delete",
         credentials: "include",
       });
+      toast.success("Compte supprimé");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -20,14 +21,18 @@ export default function UsersAcceptedList({ user }: { user: UserType }) {
   return (
     <section className={style.container}>
       <article key={user.id} className={style.userCard}>
-        <div>
+        <p className={style.name}>
           {user.firstname} {user.lastname}
-        </div>
-        <div>
+        </p>
+
+        <p className={style.text}>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
-        </div>
+        </p>
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          <button type="submit">Supprimer</button>
+          <button type="submit" className={style.button}>
+            Supprimer
+          </button>
         </form>
       </article>
     </section>

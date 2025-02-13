@@ -24,8 +24,8 @@ export default function SerieDetails({ id }: { id: string }) {
         />
         <div className={style.description}>
           <h2 className={style.titleH2}>{serieDetails.title}</h2>
-          <h3>Auteur : {serieDetails.author}</h3>
-          <p>synopsis : {serieDetails.synopsis}</p>
+          <h3 className={style.titleH3}>Auteur : {serieDetails.author}</h3>
+          <p className={style.synopsis}>{serieDetails.synopsis}</p>
         </div>
       </section>
     )

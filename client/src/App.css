@@ -18,3 +18,8 @@
   font-family: "josefin-sans";
   src: url(./assets/font/josefin-sans.ttf);
 }
+
+@font-face {
+  font-family: "raleway-regular";
+  src: url(./assets/font/raleway-regular.ttf);
+}

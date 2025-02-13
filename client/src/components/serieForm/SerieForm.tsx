@@ -31,10 +31,10 @@ function SerieForm() {
   };
 
   return (
-    <section className={style.decisionContainer}>
-      <h2 className={style.titleH2}>Création d'un nouveau manga</h2>
+    <section className={style.container}>
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
-        <section>
+        <section className={style.section}>
+          <h2 className={style.titleH2}>Création d'un nouveau manga</h2>
           <label htmlFor="title" className={style.label}>
             Titre du manga :
             <input
@@ -45,20 +45,15 @@ function SerieForm() {
               {...register("title", { required: true })}
             />
           </label>
-        </section>
-
-        <section>
           <label htmlFor="author" className={style.label}>
             Auteur :
             <input
-              className={style.textarea}
+              className={style.input}
               id="author"
               placeholder="Saisissez l'impact ici"
               {...register("author", { required: true })}
             />
           </label>
-        </section>
-        <section>
           <label htmlFor="synopsis" className={style.label}>
             Synopsis :
             <textarea
@@ -68,28 +63,25 @@ function SerieForm() {
               {...register("synopsis", { required: true })}
             />
           </label>
-        </section>
-        <section>
           <label htmlFor="picture" className={style.label}>
             Adresse URL de la photo :
             <input
-              className={style.textarea}
+              className={style.input}
               id="picture"
               placeholder="Saisissez les bénéfices ici"
               {...register("picture", { required: true })}
             />
           </label>
-        </section>
-
-        <section className={style.buttongroup}>
-          <NavLink to={"/admin"}>
-            <button type="button" className={style.canceldButton}>
-              Annuler
+          <section className={style.buttonGroup}>
+            <button type="button" className={style.buttonCancel}>
+              <NavLink to={"/admin"} className={style.link}>
+                Annuler
+              </NavLink>
             </button>
-          </NavLink>
-          <button type="submit" className={style.add}>
-            Ajouter un manga
-          </button>
+            <button type="submit" className={style.buttonSubmit}>
+              Ajouter un manga
+            </button>
+          </section>
         </section>
       </form>
     </section>

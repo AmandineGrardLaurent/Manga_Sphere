@@ -38,3 +38,23 @@
   color: white;
   text-align: center;
 }
+
+.link {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  color: var(--color-blue);
+  text-decoration: none;
+  font-size: 0.7em;
+}
+
+.buttonLogin {
+  border-radius: 1em;
+  width: 16em;
+  height: 3em;
+  border: none;
+  color: white;
+  background-color: var(--color-blue);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  margin: auto;
+}

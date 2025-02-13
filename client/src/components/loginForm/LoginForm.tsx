@@ -97,7 +97,9 @@ export default function LoginForm() {
             Se connecter
           </button>
 
-          <NavLink to="/register">Pas encore inscrit ?</NavLink>
+          <NavLink to="/register" className={style.link}>
+            Pas encore <b>inscrit ?</b>
+          </NavLink>
         </section>
       </form>
     </section>

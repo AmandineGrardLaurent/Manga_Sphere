@@ -16,6 +16,8 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
         credentials: "include",
         body: JSON.stringify(user),
       });
+
+      toast.success("Inscription finalisée");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -27,6 +29,7 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
         method: "delete",
         credentials: "include",
       });
+      toast.success("Inscription rejetée");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -35,19 +38,23 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
   return (
     <section className={style.container}>
       <article key={user.id} className={style.userCard}>
-        <div>
+        <p className={style.name}>
           {user.firstname} {user.lastname}
-        </div>
-        <div>
+        </p>
+        <p className={style.text}>
           Demande envoyée le{" "}
           {new Date(user.created_at).toLocaleDateString("fr")}
-        </div>
+        </p>
 
         <form onSubmit={handleSubmit(onAccept)}>
-          <button type="submit">Accepter</button>
+          <button type="submit" className={style.buttonAccepted}>
+            Accepter
+          </button>
         </form>
         <form onSubmit={handleSubmit(onRefused)}>
-          <button type="submit">Rejeter</button>
+          <button type="submit" className={style.buttonRefused}>
+            Rejeter
+          </button>
         </form>
       </article>
     </section>

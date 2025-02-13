@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from "./volumeDetails.module.css";
 
 export default function VolumesDetails({ id }: { id: string }) {
   const [volumes, setVolumes] = useState<VolumeType[]>([]);
@@ -12,11 +13,11 @@ export default function VolumesDetails({ id }: { id: string }) {
   }, [id]);
   return (
     volumes.length > 0 && (
-      <section>
-        <h2>Les tomes : </h2>
+      <section className={style.container}>
+        <h2 className={style.titleH2}>Les tomes : </h2>
         <ul>
           {volumes.map((volume) => (
-            <li key={volume.id}>
+            <li key={volume.id} className={style.list}>
               Tome {volume.number} : {volume.title}
             </li>
           ))}
