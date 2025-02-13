@@ -10,6 +10,7 @@ import App from "./App";
 import AdminProfilePage from "./pages/adminProfilePage/AdminProfilePage";
 import RegisterPage from "./pages/registerPage/RegisterPage";
 import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
+import SerieFormPage from "./pages/serieFormPage/SerieFormPage";
 import SeriesPage from "./pages/seriesPage/SeriesPage";
 
 // Import additional components for new routes
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/series/details/:id",
         element: <SerieDetailsPage />,
+      },
+      {
+        path: "/serieForm",
+        element: <SerieFormPage />,
       },
     ],
   },
