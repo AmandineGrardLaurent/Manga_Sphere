@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import UsersAcceptedList from "../../components/usersAcceptedList/UsersAcceptedList";
 import UsersWaitingList from "../../components/usersWaitingList/UsersWaitingList";
 
@@ -21,7 +22,8 @@ export default function AdminProfilePage() {
 
   return (
     <>
-      <h1>Bienvenue sur l'espace administrateur de la Manga Sphere</h1>{" "}
+      <h1>Bienvenue sur l'espace administrateur de la Manga Sphere</h1>
+      <NavLink to="/serieForm">Ajout d'un nouveau manga</NavLink>
       <section>
         <h2>Gestion des demandes d'inscription</h2>
         {waitingUsers.map((user) => (

@@ -36,6 +36,13 @@ type SerieDetailsType = {
   picture: string;
 };
 
+type SerieFormType = {
+  title: string;
+  synopsis: string;
+  author: string;
+  picture: string;
+};
+
 // season
 
 type SeasonType = {

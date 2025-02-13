@@ -26,3 +26,24 @@ export const validateDataFormUser: RequestHandler = async (req, res, next) => {
     res.status(400).json({ validationErrors: error.details });
   }
 };
+
+export const validateDataFormSerie: RequestHandler = async (req, res, next) => {
+  const dataSchema = Joi.object({
+    title: Joi.string()
+      .max(255)
+      .required()
+      .pattern(/^[A-Za-zÀ-ÿ\s-]+$/),
+    author: Joi.string()
+      .max(150)
+      .required()
+      .pattern(/^[A-Za-zÀ-ÿ\s-]+$/),
+    synopsis: Joi.string().required(),
+    picture: Joi.string().max(250).required(),
+  });
+  const { error } = dataSchema.validate(req.body, { abortEarly: false });
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
