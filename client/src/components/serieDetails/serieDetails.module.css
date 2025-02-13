@@ -24,3 +24,23 @@
   font-family: "paytone-one";
   color: var(--color-blue);
 }
+
+.titleH2 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  color: var(--color-blue);
+}
+
+.titleH3 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  color: var(--color-yellow);
+  font-size: 1.5em;
+}
+
+.synopsis {
+  list-style: none;
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  font-size: 1.2em;
+}

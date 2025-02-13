@@ -148,10 +148,12 @@ export default function Register() {
               {...register("email", { required: "champ obligatoire" })}
             />
           </label>
-          <button type="submit" className={style.buttonCreateUser}>
+          <button type="submit" className={style.buttonSubmit}>
             Envoyer ma demande à l'administrateur
           </button>
-          <NavLink to="/login">Se connecter</NavLink>
+          <NavLink to="/login" className={style.link}>
+            Ou bien se <b>connecter</b>
+          </NavLink>
         </section>
       </form>
     </section>

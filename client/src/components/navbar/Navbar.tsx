@@ -1,16 +1,23 @@
+import { NavLink } from "react-router-dom";
 import style from "./navbar.module.css";
 
 export default function Navbar() {
   return (
     <nav className={style.navbar}>
-      <h1 className={style.logo}>Manga Sphere</h1>
+      <NavLink to="/series" className={style.link}>
+        <h1 className={style.logo}>Manga Sphere</h1>
+      </NavLink>
       <div className={style.container}>
-        <button type="button" className={style.button}>
-          Mes favoris
-        </button>
-        <button type="button" className={style.button}>
-          Mon compte
-        </button>
+        <NavLink to="/series" className={style.link}>
+          <button type="button" className={style.button}>
+            Mangas
+          </button>
+        </NavLink>
+        <NavLink to="/admin" className={style.link}>
+          <button type="button" className={style.button}>
+            Admin
+          </button>
+        </NavLink>
       </div>
     </nav>
   );

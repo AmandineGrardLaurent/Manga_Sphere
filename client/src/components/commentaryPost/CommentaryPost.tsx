@@ -38,9 +38,12 @@ export default function CommentaryPost({ id }: { id: string }) {
             type="textarea"
             id="comment"
             {...register("comment", { required: "champ obligatoire" })}
+            className={style.input}
           />
         </label>
-        <button type="submit">Publier</button>
+        <button type="submit" className={style.button}>
+          Publier
+        </button>
       </form>
     </section>
   );

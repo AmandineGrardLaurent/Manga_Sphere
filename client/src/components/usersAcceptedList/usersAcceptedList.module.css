@@ -1,0 +1,34 @@
+.userCard {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.container {
+  color: white;
+  margin: 0.5em;
+}
+
+.text {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  font-size: 1.2em;
+}
+
+.name {
+  color: var(--color-yellow);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  font-size: 1.2em;
+}
+
+.button {
+  border-radius: 1em;
+  width: 7em;
+  height: 2.1em;
+  border: none;
+  color: white;
+  background-color: var(--color-blue);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+}

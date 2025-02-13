@@ -23,13 +23,13 @@ export default function CommentariesList({ id }: { id: string }) {
   return (
     comments.length > 0 && (
       <section className={style.container}>
-        <h2>Commentaires :</h2>
+        <h2 className={style.titleH2}>Commentaires :</h2>
         {comments.map((comment) => (
-          <article key={comment.comment} className={style.comment}>
-            <p>
+          <article key={comment.comment} className={style.commentName}>
+            <p className={style.name}>
               {comment.firstname} {comment.lastname}
             </p>
-            <p>{comment.comment}</p>
+            <p className={style.comment}>{comment.comment}</p>
           </article>
         ))}
       </section>

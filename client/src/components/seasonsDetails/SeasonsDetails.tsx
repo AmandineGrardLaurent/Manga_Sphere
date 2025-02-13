@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from "./seasonDetails.module.css";
 
 export default function SeasonsDetails({ id }: { id: string }) {
   const [seasons, setSeasons] = useState<SeasonType[]>([]);
@@ -12,11 +13,11 @@ export default function SeasonsDetails({ id }: { id: string }) {
 
   return (
     seasons.length > 0 && (
-      <section>
-        <h2>Les saisons : </h2>
+      <section className={style.container}>
+        <h2 className={style.titleH2}>Les saisons : </h2>
         <ul>
           {seasons.map((season) => (
-            <li key={season.id}>
+            <li key={season.id} className={style.list}>
               Saison {season.number} : {season.title} - Sortie en {season.year}
             </li>
           ))}

@@ -22,10 +22,14 @@ export default function SerieDetailsPage() {
       </header>
       <section className={style.page}>
         <SerieDetails id={id} />
-        <SeasonsDetails id={id} />
-        <VolumesDetails id={id} />
-        <CommentariesList id={id} />
-        <CommentaryPost id={id} />
+        <section className={style.books}>
+          <SeasonsDetails id={id} />
+          <VolumesDetails id={id} />
+        </section>
+        <section className={style.commentary}>
+          <CommentariesList id={id} />
+          <CommentaryPost id={id} />
+        </section>
       </section>
     </>
   );

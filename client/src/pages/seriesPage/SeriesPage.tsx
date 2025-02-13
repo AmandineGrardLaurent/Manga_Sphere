@@ -27,13 +27,15 @@ export default function SeriesPage() {
           />
         </header>
         <main className={style.main}>
-          <h2 className={style.titleH2}>Découvre ton manga</h2>
+          <h2 className={style.titleH2}>Découvre ton futur manga :</h2>
           <section>
-            <article className={style.card}>
+            <ul className={style.card}>
               {series.map((serie) => (
-                <SerieCard serie={serie} key={serie.id} />
+                <li key={serie.id}>
+                  <SerieCard serie={serie} />
+                </li>
               ))}
-            </article>
+            </ul>
           </section>
         </main>
       </>

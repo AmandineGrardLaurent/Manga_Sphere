@@ -4,23 +4,9 @@
   color: var(--color-blue);
 }
 
-.name {
+.list {
+  list-style: none;
   /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "raleway-regular";
   font-size: 1.2em;
-  color: var(--color-yellow);
-}
-
-.comment {
-  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
-  font-family: "raleway-regular";
-  font-size: 1em;
-}
-
-.commentName {
-  margin: 0.9em 0;
-}
-
-.container {
-  margin-bottom: 2em;
 }
