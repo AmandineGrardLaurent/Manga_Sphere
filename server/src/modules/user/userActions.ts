@@ -32,6 +32,7 @@ const edit: RequestHandler = async (req, res, next) => {
       lastname: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
+      role_id: req.body.role_id,
     };
     const affectedRows = await userRepository.update(user);
 
@@ -64,6 +65,42 @@ const destroy: RequestHandler = async (req, res, next) => {
   }
 };
 
+// waiting users
+const browseWaitingUsers: RequestHandler = async (req, res, next) => {
+  try {
+    const user = await userRepository.readAllWaitingUsers();
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+};
+
+const editWaitingUser: RequestHandler = async (req, res, next) => {
+  try {
+    const userId = Number.parseInt(req.params.id);
+
+    const affectedRows = await userRepository.updateWaitingUser(userId);
+
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+// accepted users
+const browseAcceptedUsers: RequestHandler = async (req, res, next) => {
+  try {
+    const user = await userRepository.readAllAcceptedUsers();
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+};
+
 // vérification de l'existence ou non de l'email dans la BDD
 const verifyEmailExists: RequestHandler = async (req, res, next) => {
   try {
@@ -79,4 +116,14 @@ const verifyEmailExists: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, edit, add, destroy, verifyEmailExists };
+export default {
+  browse,
+  read,
+  edit,
+  add,
+  destroy,
+  verifyEmailExists,
+  browseWaitingUsers,
+  editWaitingUser,
+  browseAcceptedUsers,
+};
