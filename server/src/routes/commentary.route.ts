@@ -3,8 +3,8 @@
 // const router = express.Router();
 
 // router.get(
-//   "/api/serie/commentary/:id",
-//
+//   "/api/serie/commentary/:id"
+
 // );
 // router.post("/api/serie/commentary");
 
