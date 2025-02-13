@@ -66,3 +66,12 @@ type VolumeType = {
   number: number;
   serie_id: number;
 };
+
+// commentary
+
+type CommentaryType = {
+  comment: string;
+  // rating: string;
+  // user_id: number;
+  serie_id: number;
+};
