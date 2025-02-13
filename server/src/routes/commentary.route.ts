@@ -1,11 +1,8 @@
-// import express from "express";
+import express from "express";
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.get(
-//   "/api/serie/commentary/:id"
+router.get("/api/serie/commentary/:id");
+router.post("/api/serie/commentary");
 
-// );
-// router.post("/api/serie/commentary");
-
-// export default router;
+export default router;
