@@ -4,12 +4,23 @@ import style from "./registerPage.module.css";
 
 export default function RegisterPage() {
   return (
-    <section className={style.container}>
-      <div>
-        <h1 className={style.logo}>Manga Sphere</h1>
+    <>
+      <div className={style.logo}>
+        <h1>Manga Sphere</h1>
       </div>
-      <img src={banner} alt="banner demon slayer" className={style.banner} />
-      <Register />
-    </section>
+      <section className={style.container}>
+        {" "}
+        <article className={style.image}>
+          <img
+            src={banner}
+            alt="banner demon slayer"
+            className={style.banner}
+          />
+        </article>
+        <article className={style.register}>
+          <Register />
+        </article>
+      </section>
+    </>
   );
 }

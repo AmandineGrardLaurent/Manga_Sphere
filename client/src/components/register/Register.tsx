@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import type { FieldValues } from "react-hook-form";
+import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import style from "./register.module.css";
 
@@ -43,7 +44,7 @@ export default function Register() {
 
   return (
     <section className={style.container}>
-      <form onSubmit={handleSubmit(onSubmit)} className={style.card}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <section className={style.section}>
           <h2 className={style.titleH2}>Formulaire d'inscription</h2>
           <label htmlFor="lastname" className={style.label}>
@@ -150,6 +151,7 @@ export default function Register() {
           <button type="submit" className={style.buttonCreateUser}>
             Envoyer ma demande à l'administrateur
           </button>
+          <NavLink to="/login">Se connecter</NavLink>
         </section>
       </form>
     </section>
