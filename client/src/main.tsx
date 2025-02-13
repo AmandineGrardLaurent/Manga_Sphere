@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import AdminProfilePage from "./pages/adminProfilPage/AdminProfilePage";
 import RegisterPage from "./pages/registerPage/RegisterPage";
 import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
 import SeriesPage from "./pages/seriesPage/SeriesPage";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterPage />,
+      },
+      {
+        path: "/admin",
+        element: <AdminProfilePage />,
       },
       {
         path: "/series/details/:id",

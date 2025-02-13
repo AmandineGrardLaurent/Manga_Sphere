@@ -6,6 +6,7 @@ type UserType = {
   firstname: string;
   email: string;
   password: string;
+  role_id: string;
 };
 
 type NewUserType = {
@@ -13,6 +14,7 @@ type NewUserType = {
   firstname: string;
   email: string;
   password: string;
+  role_id: string;
 };
 
 // serie

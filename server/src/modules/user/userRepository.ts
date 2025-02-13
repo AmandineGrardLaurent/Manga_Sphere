@@ -25,8 +25,15 @@ class UserRepository {
 
   async update(user: UserType) {
     const [result] = await databaseClient.query<Result>(
-      "UPDATE user SET firstname = ?, lastname = ?, email = ?, password = ? WHERE id = ?",
-      [user.firstname, user.lastname, user.email, user.password, user.id],
+      "UPDATE user SET firstname = ?, lastname = ?, email = ?, password = ?, role_id = ?WHERE id = ?",
+      [
+        user.firstname,
+        user.lastname,
+        user.email,
+        user.password,
+        user.role_id,
+        user.id,
+      ],
     );
     return result.affectedRows;
   }
@@ -37,6 +44,28 @@ class UserRepository {
       [id],
     );
     return result.affectedRows;
+  }
+
+  async readAllWaitingUsers() {
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM user WHERE role_id=2",
+    );
+    return rows;
+  }
+
+  async updateWaitingUser(userId: number) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE user SET role_id=3 WHERE id = ?",
+      [userId],
+    );
+    return result.affectedRows;
+  }
+
+  async readAllAcceptedUsers() {
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM user WHERE role_id=3",
+    );
+    return rows;
   }
 
   // vérification de l'existence de l'email dans la BDD
