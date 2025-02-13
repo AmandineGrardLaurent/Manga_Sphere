@@ -6,6 +6,7 @@ type UserType = {
   firstname: string;
   email: string;
   password: string;
+  role_id: string;
 };
 
 type NewUserType = {
@@ -13,6 +14,7 @@ type NewUserType = {
   firstname: string;
   email: string;
   password: string;
+  role_id: string;
 };
 
 // serie
@@ -62,6 +64,15 @@ type VolumeType = {
   id: number;
   title: string;
   number: number;
+  serie_id: number;
+};
+
+// commentary
+
+type CommentaryType = {
+  comment: string;
+  // rating: string;
+  // user_id: number;
   serie_id: number;
 };
 

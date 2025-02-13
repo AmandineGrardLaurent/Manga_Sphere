@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import CommentariesList from "../../components/commentariesList/CommentariesList";
+import CommentaryPost from "../../components/commentaryPost/CommentaryPost";
 import SeasonsDetails from "../../components/seasonsDetails/SeasonsDetails";
 import SerieDetails from "../../components/serieDetails/SerieDetails";
 import VolumesDetails from "../../components/volumesDetails/VolumesDetails";
@@ -14,6 +16,8 @@ export default function SerieDetailsPage() {
       <SerieDetails id={id} />
       <SeasonsDetails id={id} />
       <VolumesDetails id={id} />
+      <CommentariesList id={id} />
+      <CommentaryPost id={id} />
     </>
   );
 }

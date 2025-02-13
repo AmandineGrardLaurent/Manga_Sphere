@@ -7,9 +7,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import AdminProfilePage from "./pages/adminProfilePage/AdminProfilePage";
 import LoginPage from "./pages/loginPage/LoginPage";
 import RegisterPage from "./pages/registerPage/RegisterPage";
 import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
+import SerieFormPage from "./pages/serieFormPage/SerieFormPage";
 import SeriesPage from "./pages/seriesPage/SeriesPage";
 
 // Import additional components for new routes
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
         element: <RegisterPage />,
       },
       {
+        path: "/admin",
+        element: <AdminProfilePage />,
+      },
+      {
         path: "/series",
         element: <SeriesPage />,
       },
@@ -41,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/series/details/:id",
         element: <SerieDetailsPage />,
+      },
+      {
+        path: "/serieForm",
+        element: <SerieFormPage />,
       },
     ],
   },

@@ -8,6 +8,17 @@ type RegisterFormType = {
   confirmed_password: string;
 };
 
+type UserType = {
+  id: number;
+  lastname: string;
+  firstname: string;
+  email: string;
+  password: string;
+  role_id: number;
+  created_at: Date;
+  updated_at: Date;
+};
+
 // serie
 
 type SerieType = {
@@ -19,6 +30,13 @@ type SerieType = {
 };
 
 type SerieDetailsType = {
+  title: string;
+  synopsis: string;
+  author: string;
+  picture: string;
+};
+
+type SerieFormType = {
   title: string;
   synopsis: string;
   author: string;

@@ -17,4 +17,9 @@ router.post(
 router.put("/api/user/:id", userActions.edit);
 router.delete("/api/user/:id", userActions.destroy);
 
+// gestion admin
+router.get("/api/waiting", userActions.browseWaitingUsers);
+router.put("/api/waiting/:id", userActions.editWaitingUser);
+router.get("/api/accepted", userActions.browseAcceptedUsers);
+
 export default router;
