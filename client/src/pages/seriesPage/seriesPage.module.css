@@ -1,11 +1,13 @@
 .main {
   background-color: #0d0d0d;
+  padding: 4em;
 }
 
 .card {
   display: flex;
   flex-direction: row;
-  gap: 2em;
+  gap: 2.5em;
+  /* flex-wrap: wrap; */
 }
 
 @media screen and (max-width: 768px) {
@@ -19,6 +21,7 @@
   font-family: "paytone-one";
   color: var(--color-yellow);
   font-size: 3em;
+  margin-bottom: 1em;
 }
 
 .banner {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import style from "./serieDetails.module.css";
 
 export default function SerieDetails({ id }: { id: string }) {
   const [serieDetails, setSerieDetails] = useState(
@@ -15,15 +16,17 @@ export default function SerieDetails({ id }: { id: string }) {
 
   return (
     serieDetails && (
-      <section>
-        <h2>Titre : {serieDetails.title}</h2>
+      <section className={style.container}>
         <img
           src={serieDetails.picture}
           alt={serieDetails.title}
-          width="400px"
+          className={style.image}
         />
-        <h2>Auteur : {serieDetails.author}</h2>
-        <p>synopsis : {serieDetails.synopsis}</p>
+        <div className={style.description}>
+          <h2 className={style.titleH2}>{serieDetails.title}</h2>
+          <h3>Auteur : {serieDetails.author}</h3>
+          <p>synopsis : {serieDetails.synopsis}</p>
+        </div>
       </section>
     )
   );
