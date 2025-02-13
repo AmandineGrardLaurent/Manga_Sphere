@@ -5,11 +5,11 @@ class CommentaryRepository {
   async create(commentary: CommentaryType) {
     const [result] = await databaseClient.query<Result>(
       `INSERT INTO comment (comment, rating, user_id, serie_id) 
-          VALUES (?, "2", 1, ?)`,
+          VALUES (?, "2", ?, ?)`,
       [
         commentary.comment,
         // commentary.rating,
-        // commentary.user_id,
+        commentary.user_id,
         commentary.serie_id,
       ],
     );

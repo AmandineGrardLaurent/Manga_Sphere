@@ -1,4 +1,5 @@
 import type { RequestHandler } from "express";
+import { decodeToken } from "../../services/jwt/jwt.helper";
 import userRepository from "./userRepository";
 
 const browse: RequestHandler = async (req, res, next) => {
@@ -104,7 +105,7 @@ const browseAcceptedUsers: RequestHandler = async (req, res, next) => {
 // vérification de l'existence ou non de l'email dans la BDD
 const verifyEmailExists: RequestHandler = async (req, res, next) => {
   try {
-    const user = await userRepository.readByEmail(req.body.email);
+    const user = await userRepository.checkUniqueEmail(req.body.email);
 
     if (user.length !== 0) {
       res.sendStatus(422);
@@ -113,6 +114,61 @@ const verifyEmailExists: RequestHandler = async (req, res, next) => {
     next();
   } catch (e) {
     next(e);
+  }
+};
+
+export const getUserByEmail: RequestHandler = async (
+  req,
+  res,
+  next,
+): Promise<void> => {
+  try {
+    const { email } = req.body;
+    const user: UserType | null = await userRepository.readByEmail(email);
+    if (!email) {
+      res.status(400).json({
+        message: "Le champ email est requis.",
+      });
+    }
+
+    if (!user) {
+      res.status(404).json({
+        message: "Le couple email / mot de passe est incorrect.",
+      });
+      return;
+    }
+
+    req.body.dbpassword = user.password;
+
+    next();
+  } catch (e) {
+    next(e);
+  }
+};
+
+const addUserByTokenEmailForComment: RequestHandler = async (
+  req,
+  res,
+  next,
+) => {
+  try {
+    const decodedToken = (await decodeToken(
+      req.cookies?.auth_token,
+    )) as PayloadType;
+    if (!decodedToken) {
+      res.status(403).json({ message: "Accès refusé" });
+      return;
+    }
+    const user: { user_id: number } | null =
+      await userRepository.readByEmailForComment(decodedToken?.email);
+    if (!user) {
+      res.status(404).json({ message: "Utilisateur non reconnu" });
+      return;
+    }
+    req.body.user_id = user.user_id;
+    next();
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -126,4 +182,5 @@ export default {
   browseWaitingUsers,
   editWaitingUser,
   browseAcceptedUsers,
+  addUserByTokenEmailForComment,
 };

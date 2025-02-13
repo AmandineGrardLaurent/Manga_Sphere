@@ -9,7 +9,6 @@ export default function RegisterPage() {
         <h1>Manga Sphere</h1>
       </div>
       <section className={style.container}>
-        {" "}
         <article className={style.image}>
           <img
             src={banner}

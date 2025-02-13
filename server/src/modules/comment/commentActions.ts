@@ -17,7 +17,11 @@ const browseCommentaryFromOneSerie: RequestHandler = async (req, res, next) => {
 
 const add: RequestHandler = async (req, res, next): Promise<void> => {
   try {
-    const commentary = { comment: req.body.comment, serie_id: req.body.id };
+    const commentary = {
+      comment: req.body.comment,
+      serie_id: req.body.id,
+      user_id: req.body.user_id,
+    };
     const insertId = await commentRepository.create(commentary);
 
     res.status(201).json({ id: insertId });

@@ -7,3 +7,7 @@ export const encodeJWT = async (payload: PayloadType) => {
     expiresIn: "24h",
   });
 };
+
+export const decodeToken = (token: string) => {
+  return jwt.decode(token);
+};

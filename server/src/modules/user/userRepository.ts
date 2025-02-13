@@ -69,12 +69,34 @@ class UserRepository {
   }
 
   // vérification de l'existence de l'email dans la BDD
-  async readByEmail(userEmail: string) {
+  async checkUniqueEmail(userEmail: string) {
     const [rows] = await databaseClient.query<Rows>(
       "SELECT * FROM user WHERE email= ?",
       [userEmail],
     );
     return rows as UserType[];
+  }
+
+  async readByEmail(userEmail: string): Promise<UserType | null> {
+    const [user] = await databaseClient.query<Rows>(
+      "SELECT * FROM user WHERE email= ?",
+      [userEmail],
+    );
+
+    const result = user as UserType[];
+    return result.length > 0 ? result[0] : null;
+  }
+
+  async readByEmailForComment(
+    email: string,
+  ): Promise<{ user_id: number } | null> {
+    const [user] = await databaseClient.query<Rows>(
+      "SELECT id AS user_id FROM user WHERE email = ?",
+      [email],
+    );
+
+    const result = user as { user_id: number }[];
+    return result[0];
   }
 }
 

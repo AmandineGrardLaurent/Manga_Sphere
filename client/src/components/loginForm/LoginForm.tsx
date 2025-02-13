@@ -21,7 +21,7 @@ export default function LoginForm() {
         password,
       };
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/auth`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export default function LoginForm() {
       }
 
       setTimeout(() => {
-        Navigate("/");
+        Navigate("/series");
       }, 1500);
     } catch (error) {
       toast.error("Erreur de connexion. Vérifiez vos identifiants.");
@@ -47,10 +47,11 @@ export default function LoginForm() {
 
   return (
     <section className={style.container}>
-      <form onSubmit={handleSubmit(onSubmit)} className={style.card}>
-        <h1 className={style.title}>Connexion</h1>
-        <section>
-          <label htmlFor="email">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <section className={style.section}>
+          <h1 className={style.titleH2}>Connexion</h1>
+
+          <label htmlFor="email" className={style.label}>
             Email
             <input
               id="email"
@@ -68,7 +69,7 @@ export default function LoginForm() {
             </span>
           </label>
 
-          <label htmlFor="password">
+          <label htmlFor="password" className={style.label}>
             Mot de passe
             <input
               id="password"
@@ -95,9 +96,10 @@ export default function LoginForm() {
           <button type="submit" className={style.buttonLogin}>
             Se connecter
           </button>
+
+          <NavLink to="/register">Pas encore inscrit ?</NavLink>
         </section>
       </form>
-      <NavLink to="/register">Pas encore inscrit ?</NavLink>
     </section>
   );
 }
