@@ -9,3 +9,10 @@ const hashingOptions = {
 export const hashPasswordHelper = async (password: string) => {
   return await argon2.hash(password, hashingOptions);
 };
+
+export const verifyPasswordHelper = async (
+  dbpassword: string,
+  password: string,
+) => {
+  return await argon2.verify(dbpassword, password);
+};

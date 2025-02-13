@@ -13,6 +13,7 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(user),
       });
     } catch (error) {
@@ -24,6 +25,7 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
     try {
       fetch(`${import.meta.env.VITE_API_URL}/api/user/${userId}`, {
         method: "delete",
+        credentials: "include",
       });
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");

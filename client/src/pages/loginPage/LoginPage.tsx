@@ -1,8 +1,8 @@
 import banner from "../../assets/images/banner_demon_slayer.jpg";
-import Register from "../../components/register/Register";
-import style from "./registerPage.module.css";
+import LoginForm from "../../components/loginForm/LoginForm";
+import style from "./loginPage.module.css";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <>
       <div className={style.logo}>
@@ -16,8 +16,8 @@ export default function RegisterPage() {
             className={style.banner}
           />
         </article>
-        <article className={style.register}>
-          <Register />
+        <article className={style.login}>
+          <LoginForm />
         </article>
       </section>
     </>

@@ -72,6 +72,14 @@ type VolumeType = {
 type CommentaryType = {
   comment: string;
   // rating: string;
-  // user_id: number;
+  user_id: number;
   serie_id: number;
+};
+
+// token
+
+type PayloadType = {
+  email: string;
+  iat: number;
+  exp: number;
 };

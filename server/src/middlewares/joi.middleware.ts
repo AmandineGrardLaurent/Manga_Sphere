@@ -47,3 +47,22 @@ export const validateDataFormSerie: RequestHandler = async (req, res, next) => {
     res.status(400).json({ validationErrors: error.details });
   }
 };
+
+export const validateDataFormFromComment: RequestHandler = async (
+  req,
+  res,
+  next,
+) => {
+  const dataSchema = Joi.object({
+    comment: Joi.string().required(),
+    user_id: Joi.number().required(),
+    id: Joi.string().required(),
+  });
+
+  const { error } = dataSchema.validate(req.body, { abortEarly: false });
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};

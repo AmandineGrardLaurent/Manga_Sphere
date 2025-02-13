@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import AdminProfilePage from "./pages/adminProfilePage/AdminProfilePage";
+import LoginPage from "./pages/loginPage/LoginPage";
 import RegisterPage from "./pages/registerPage/RegisterPage";
 import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
 import SerieFormPage from "./pages/serieFormPage/SerieFormPage";
@@ -26,9 +27,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/series",
-        element: <SeriesPage />,
+        path: "/login",
+        element: <LoginPage />,
       },
+
       {
         path: "/register",
         element: <RegisterPage />,
@@ -37,6 +39,11 @@ const router = createBrowserRouter([
         path: "/admin",
         element: <AdminProfilePage />,
       },
+      {
+        path: "/series",
+        element: <SeriesPage />,
+      },
+
       {
         path: "/series/details/:id",
         element: <SerieDetailsPage />,
