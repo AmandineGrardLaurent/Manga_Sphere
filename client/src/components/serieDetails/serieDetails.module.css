@@ -1,0 +1,26 @@
+.image {
+  width: 30%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-end;
+  border: 2px solid var(--color-blue);
+  padding: 3em;
+  border-radius: 2em;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.titleH2 {
+  font-size: 3em;
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  color: var(--color-blue);
+}

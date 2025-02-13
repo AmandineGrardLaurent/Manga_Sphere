@@ -13,3 +13,8 @@
   font-family: "paytone-one";
   src: url(./assets/font/paytone-one-regular.ttf);
 }
+
+@font-face {
+  font-family: "josefin-sans";
+  src: url(./assets/font/josefin-sans.ttf);
+}
