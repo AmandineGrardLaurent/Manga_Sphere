@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import AdminProfilePage from "./pages/adminProfilPage/AdminProfilePage";
+import AdminProfilePage from "./pages/adminProfilePage/AdminProfilePage";
 import RegisterPage from "./pages/registerPage/RegisterPage";
 import SerieDetailsPage from "./pages/serieDetailsPage/SerieDetailsPage";
 import SeriesPage from "./pages/seriesPage/SeriesPage";
