@@ -41,7 +41,7 @@ function SerieForm() {
               className={style.input}
               type="text"
               id="title"
-              placeholder="Titre"
+              placeholder="Jujutsu Kaisen"
               {...register("title", { required: true })}
             />
           </label>
@@ -50,7 +50,7 @@ function SerieForm() {
             <input
               className={style.input}
               id="author"
-              placeholder="Saisissez l'impact ici"
+              placeholder="Gege Akutami"
               {...register("author", { required: true })}
             />
           </label>
@@ -68,7 +68,7 @@ function SerieForm() {
             <input
               className={style.input}
               id="picture"
-              placeholder="Saisissez les bénéfices ici"
+              placeholder="https://fr.web.img3.acsta.net/pictures/20/09/14/10/31/4875617.jpg"
               {...register("picture", { required: true })}
             />
           </label>

@@ -57,7 +57,7 @@ export default function LoginForm() {
               id="email"
               type="email"
               aria-label="Saisissez votre email"
-              placeholder="arthur@kaamelott.fr"
+              placeholder="tanjiro@demonslayer.com"
               className={style.input}
               autoComplete="email"
               {...register("email", {
