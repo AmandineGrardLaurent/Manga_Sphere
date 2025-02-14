@@ -53,7 +53,7 @@ export default function Register() {
               id="lastname"
               type="text"
               aria-label="Saisissez votre nom"
-              placeholder="Pendragon"
+              placeholder="Kamado"
               className={style.input}
               {...register("lastname", {
                 required: "champ obligatoire",
@@ -72,7 +72,7 @@ export default function Register() {
               id="firstname"
               type="text"
               aria-label="Saisissez votre prénom"
-              placeholder="Arthur"
+              placeholder="Tanjiro"
               className={style.input}
               {...register("firstname", {
                 required: "champ obligatoire",
@@ -142,7 +142,7 @@ export default function Register() {
               id="email"
               type="email"
               aria-label="Saisissez votre email"
-              placeholder="arthur@kaamelott.fr"
+              placeholder="tanjiro@demonslayer.com"
               className={style.input}
               autoComplete="current-email"
               {...register("email", { required: "champ obligatoire" })}

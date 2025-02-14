@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import banner from "../../assets/images/banner_bleach.jpg";
 import CommentariesList from "../../components/commentariesList/CommentariesList";
 import CommentaryPost from "../../components/commentaryPost/CommentaryPost";
+import Favoris from "../../components/favoris/Favoris";
 import Navbar from "../../components/navbar/Navbar";
 import SeasonsDetails from "../../components/seasonsDetails/SeasonsDetails";
 import SerieDetails from "../../components/serieDetails/SerieDetails";
@@ -22,6 +23,7 @@ export default function SerieDetailsPage() {
       </header>
       <section className={style.page}>
         <SerieDetails id={id} />
+        <Favoris id={id} />
         <section className={style.books}>
           <SeasonsDetails id={id} />
           <VolumesDetails id={id} />

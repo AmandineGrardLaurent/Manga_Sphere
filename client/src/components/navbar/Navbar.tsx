@@ -13,6 +13,11 @@ export default function Navbar() {
             Mangas
           </button>
         </NavLink>
+        <NavLink to="/favoris" className={style.link}>
+          <button type="button" className={style.button}>
+            Favoris
+          </button>
+        </NavLink>
         <NavLink to="/admin" className={style.link}>
           <button type="button" className={style.button}>
             Admin

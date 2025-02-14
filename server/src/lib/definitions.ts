@@ -83,3 +83,10 @@ type PayloadType = {
   iat: number;
   exp: number;
 };
+
+// favoris
+
+type FavorisType = {
+  user_id: number;
+  serie_id: number;
+};

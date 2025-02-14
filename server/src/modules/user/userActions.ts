@@ -165,6 +165,7 @@ const addUserByTokenEmailForComment: RequestHandler = async (
       res.status(404).json({ message: "Utilisateur non reconnu" });
       return;
     }
+
     req.body.user_id = user.user_id;
     next();
   } catch (err) {
