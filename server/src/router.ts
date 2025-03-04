@@ -1,18 +1,20 @@
 import express from "express";
-
 const router = express.Router();
 
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
+import AuthRoute from "./routes/auth.route";
+import CommentRoute from "./routes/comment.route";
+import FavorisRoute from "./routes/favoris.route";
+import SeasonRoute from "./routes/season.route";
+import SerieRoute from "./routes/serie.route";
+import UserRoute from "./routes/user.route";
+import VolumeRoute from "./routes/volume.route";
 
-// Define item-related routes
-import itemActions from "./modules/item/itemActions";
-
-router.get("/api/items", itemActions.browse);
-router.get("/api/items/:id", itemActions.read);
-router.post("/api/items", itemActions.add);
-
-/* ************************************************************************* */
+router.use("/", AuthRoute);
+router.use("/", UserRoute);
+router.use("/", SerieRoute);
+router.use("/", SeasonRoute);
+router.use("/", VolumeRoute);
+router.use("/", CommentRoute);
+router.use("/", FavorisRoute);
 
 export default router;

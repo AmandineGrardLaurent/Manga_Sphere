@@ -1,0 +1,35 @@
+.logo {
+  color: var(--color-yellow);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  font-size: 1.7em;
+  padding: 1em;
+  background-color: #0d0d0d;
+}
+
+.container {
+  background-color: #0d0d0d;
+  position: relative;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+}
+
+.banner {
+  opacity: 0.5;
+  width: 100%;
+  height: auto;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

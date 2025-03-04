@@ -1,0 +1,46 @@
+.image {
+  width: 30%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-end;
+  border: 2px solid var(--color-blue);
+  padding: 3em;
+  border-radius: 2em;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.titleH2 {
+  font-size: 3em;
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  color: var(--color-blue);
+}
+
+.titleH2 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  color: var(--color-blue);
+}
+
+.titleH3 {
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  color: var(--color-yellow);
+  font-size: 1.5em;
+}
+
+.synopsis {
+  list-style: none;
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  font-size: 1.2em;
+}

@@ -1,0 +1,33 @@
+.label {
+  text-align: start;
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+  font-size: 1em;
+}
+
+.titleH2 {
+  font-size: 1.3em;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b8bcc5;
+  border-radius: 0.7em;
+  font-size: 1rem;
+  background: white;
+  margin-top: 0.2em;
+}
+
+.button {
+  margin-top: 0.5em;
+  border-radius: 1em;
+  width: 7em;
+  height: 1.7em;
+  border: none;
+  color: white;
+  font-size: 1em;
+  background-color: var(--color-blue);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "raleway-regular";
+}

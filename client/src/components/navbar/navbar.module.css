@@ -1,0 +1,31 @@
+.logo {
+  color: var(--color-yellow);
+  /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
+  font-family: "paytone-one";
+  font-size: 3em;
+  margin: 0.3em;
+}
+
+.button {
+  background-color: var(--color-yellow);
+  margin: 1em;
+  width: 8em;
+  height: 3.5em;
+  font-size: 1em;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1em;
+  background-color: #0d0d0d;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+}
