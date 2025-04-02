@@ -6,7 +6,8 @@
   color: black;
   font-weight: bold;
   font-size: 1em;
-  margin: auto 40%;
+
+  margin: auto auto;
   background-color: var(--color-yellow);
   /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "raleway-regular";

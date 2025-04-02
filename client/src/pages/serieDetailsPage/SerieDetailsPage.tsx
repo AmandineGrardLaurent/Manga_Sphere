@@ -1,3 +1,4 @@
+import { useCallback, useState } from "react";
 import { useParams } from "react-router-dom";
 import banner from "../../assets/images/banner_bleach.jpg";
 import CommentariesList from "../../components/commentariesList/CommentariesList";
@@ -11,10 +12,16 @@ import style from "./serieDetailsPage.module.css";
 
 export default function SerieDetailsPage() {
   const { id } = useParams();
+  const [refresh, setRefresh] = useState(false);
 
   if (!id) {
     return <div>Erreur, saississez un id valide</div>;
   }
+
+  const triggerRefresh = useCallback(() => {
+    setRefresh((prev) => !prev);
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -29,8 +36,8 @@ export default function SerieDetailsPage() {
           <VolumesDetails id={id} />
         </section>
         <section className={style.commentary}>
-          <CommentariesList id={id} />
-          <CommentaryPost id={id} />
+          <CommentariesList id={id} refresh={refresh} />
+          <CommentaryPost id={id} onComment={triggerRefresh} />
         </section>
       </section>
     </>

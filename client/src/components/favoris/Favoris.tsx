@@ -27,10 +27,8 @@ export default function Favoris({ id }: { id: string }) {
   };
 
   return (
-    <section>
-      <button type="button" onClick={handleClick} className={style.button}>
-        Ajouter aux favoris
-      </button>
-    </section>
+    <button type="button" onClick={handleClick} className={style.button}>
+      Ajouter aux favoris
+    </button>
   );
 }

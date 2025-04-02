@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import banner from "../../assets/images/banner_bleach.jpg";
 import Navbar from "../../components/navbar/Navbar";
-import SerieCard from "../../components/seriecard/SerieCard";
+import SerieCard from "../../components/serieCard/SerieCard";
 import style from "./seriesPage.module.css";
 
 export default function SeriesPage() {

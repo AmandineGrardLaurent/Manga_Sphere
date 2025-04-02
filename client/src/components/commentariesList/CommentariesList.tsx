@@ -9,16 +9,23 @@ type CommentaryType = {
   lastname: string;
 };
 
-export default function CommentariesList({ id }: { id: string }) {
+export default function CommentariesList({
+  id,
+  refresh,
+}: {
+  id: string;
+  refresh: boolean;
+}) {
   const [comments, setComments] = useState<CommentaryType[]>([]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/serie/commentary/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setComments(data);
       });
-  }, [id]);
+  }, [id, refresh]);
 
   return (
     comments.length > 0 && (

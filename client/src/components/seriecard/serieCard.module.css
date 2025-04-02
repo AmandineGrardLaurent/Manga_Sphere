@@ -28,7 +28,7 @@
   text-align: left;
   display: none;
   align-content: center;
-  padding: 0.40em;
+  padding: 0.4em;
   /* biome-ignore lint/a11y/useGenericFontNames: <explanation> */
   font-family: "raleway-regular";
 }
@@ -41,18 +41,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.4em;
+  justify-content: space-between;
 }
 
 .container {
   position: relative;
   display: inline-block;
   width: 15em;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .link {
