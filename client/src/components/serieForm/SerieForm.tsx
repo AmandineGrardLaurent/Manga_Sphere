@@ -21,9 +21,9 @@ function SerieForm() {
 
       if (response.ok) {
         reset();
-        toast.success("Décision envoyée à l'administrateur");
+        toast.success("Ajouté d'une nouvelle série");
       } else {
-        toast.error("Erreur lors de l'envoi de la décision");
+        toast.error("Erreur lors de la création de la nouvelle série");
       }
     } catch (error) {
       toast.error("Erreur de connexion au serveur...");

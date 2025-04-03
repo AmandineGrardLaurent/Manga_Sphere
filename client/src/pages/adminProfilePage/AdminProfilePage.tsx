@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import banner from "../../assets/images/banner_bleach.jpg";
 import Navbar from "../../components/navbar/Navbar";
@@ -9,7 +9,13 @@ import style from "./adminProfile.module.css";
 export default function AdminProfilePage() {
   const [acceptedUsers, setAcceptedUsers] = useState<UserType[]>([]);
   const [waitingUsers, setWaitingUsers] = useState<UserType[]>([]);
+  const [refresh, setRefresh] = useState(false);
 
+  const triggerRefresh = useCallback(() => {
+    setRefresh((prev) => !prev);
+  }, []);
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/accepted`)
       .then((response) => response.json())
@@ -21,7 +27,7 @@ export default function AdminProfilePage() {
       .then((data) => {
         setWaitingUsers(data);
       });
-  }, []);
+  }, [refresh]);
 
   return (
     <>
@@ -42,7 +48,11 @@ export default function AdminProfilePage() {
           <h3 className={style.titleH3}>Gestion des demandes d'inscription</h3>
           <article className={style.usersList}>
             {waitingUsers.map((user) => (
-              <UsersWaitingList user={user} key={user.id} />
+              <UsersWaitingList
+                user={user}
+                key={user.id}
+                onChange={triggerRefresh}
+              />
             ))}
           </article>
         </section>
@@ -50,7 +60,11 @@ export default function AdminProfilePage() {
           <h3 className={style.titleH3}>Gestion des utilisateurs inscrits</h3>
           <article className={style.usersList}>
             {acceptedUsers.map((user) => (
-              <UsersAcceptedList user={user} key={user.id} />
+              <UsersAcceptedList
+                user={user}
+                key={user.id}
+                onDelete={triggerRefresh}
+              />
             ))}
           </article>
         </section>

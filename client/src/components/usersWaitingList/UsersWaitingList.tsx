@@ -2,7 +2,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import style from "./usersWaitingList.module.css";
 
-export default function UsersWaitingList({ user }: { user: UserType }) {
+export default function UsersWaitingList({
+  user,
+  onChange,
+}: {
+  user: UserType;
+  onChange: () => void;
+}) {
   const { handleSubmit } = useForm<UserType>();
   const userId = user.id;
 
@@ -16,8 +22,8 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
         credentials: "include",
         body: JSON.stringify(user),
       });
-
       toast.success("Inscription finalisée");
+      onChange();
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -29,6 +35,7 @@ export default function UsersWaitingList({ user }: { user: UserType }) {
         method: "delete",
         credentials: "include",
       });
+      onChange();
       toast.success("Inscription rejetée");
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");

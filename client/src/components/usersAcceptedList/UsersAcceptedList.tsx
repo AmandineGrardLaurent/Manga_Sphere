@@ -2,7 +2,13 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import style from "./usersAcceptedList.module.css";
 
-export default function UsersAcceptedList({ user }: { user: UserType }) {
+export default function UsersAcceptedList({
+  user,
+  onDelete,
+}: {
+  user: UserType;
+  onDelete: () => void;
+}) {
   const { handleSubmit } = useForm();
   const userId = user.id;
 
@@ -13,6 +19,7 @@ export default function UsersAcceptedList({ user }: { user: UserType }) {
         credentials: "include",
       });
       toast.success("Compte supprimé");
+      onDelete();
     } catch (error) {
       toast.error("Erreur lors de la modification du profil");
     }
@@ -25,7 +32,6 @@ export default function UsersAcceptedList({ user }: { user: UserType }) {
           {user.firstname.charAt(0).toUpperCase() + user.firstname.slice(1)}{" "}
           {user.lastname.charAt(0).toUpperCase() + user.lastname.slice(1)}
         </p>
-
         <p className={style.text}>
           Inscrit le {new Date(user.created_at).toLocaleDateString("fr")}
         </p>
