@@ -4,7 +4,7 @@ import type { Result, Rows } from "../../../database/client";
 class FavorisRepository {
   async create(favoris: FavorisType) {
     const [result] = await databaseClient.query<Result>(
-      `INSERT INTO user_serie (user_id, serie_id) 
+      `INSERT INTO user_serie (user_id, serie_id)
           VALUES ( ?, ?)`,
       [favoris.user_id, favoris.serie_id],
     );
