@@ -13,7 +13,7 @@ export default function Favoris({ id }: { id: string }) {
           },
           credentials: "include",
           body: JSON.stringify({ serie_id: id }),
-        }
+        },
       );
 
       if (response.ok) {

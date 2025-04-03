@@ -22,7 +22,8 @@ export default function UsersAcceptedList({ user }: { user: UserType }) {
     <section className={style.container}>
       <article key={user.id} className={style.userCard}>
         <p className={style.name}>
-          {user.firstname} {user.lastname}
+          {user.firstname.charAt(0).toUpperCase() + user.firstname.slice(1)}{" "}
+          {user.lastname.charAt(0).toUpperCase() + user.lastname.slice(1)}
         </p>
 
         <p className={style.text}>

@@ -34,7 +34,10 @@ export default function CommentariesList({
         {comments.map((comment) => (
           <article key={comment.comment} className={style.commentName}>
             <p className={style.name}>
-              {comment.firstname} {comment.lastname}
+              {comment.firstname.charAt(0).toUpperCase() +
+                comment.firstname.slice(1)}{" "}
+              {comment.lastname.charAt(0).toUpperCase() +
+                comment.lastname.slice(1)}
             </p>
             <p className={style.comment}>{comment.comment}</p>
           </article>
